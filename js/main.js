@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //Portfolio Lightbox
     const lightbox = document.querySelector(".lightbox"),
           lightboxClose = lightbox.querySelector(".lightbox-close i"),
-          lightboxImg = lightbox.querySelector(".lightbox-img");
+          lightboxImg = lightbox.querySelector(".lightbox-img"),
+          lightboxRepo = lightbox.querySelector("#lightbox-repositorio"),
+          lightboxLink = lightbox.querySelector("#lightbox-link");
+
     
     let itemIndex = 0;
 
@@ -54,7 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function changeItem(){
         imgSrc = portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("src");
+        linkPagina = portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("data-link");
+        repoPagina = portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("data-repo");
         lightboxImg.src = imgSrc;
+        lightboxLink.setAttribute("href", linkPagina);
+        lightboxRepo.setAttribute("href", repoPagina);
     }
 
     lightbox.addEventListener("click", function(e){
@@ -123,7 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
+    //Btn contact
+    const btnContacto = document.querySelector("#btnContacto");
+    btnContacto.addEventListener("click", () => {
+        for(let i = 0; i < totalSection; i++){
+            allSection[i].classList.remove("active");
+        }
+        document.querySelector("#contact").classList.add("active");
+    });
 
 
 
