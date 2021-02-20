@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="dark">
+<body>
     <!--Main Container-->
     <div class="main-container">
         <!-- Aside -->
@@ -23,19 +23,33 @@
             </div>
             <!-- Bars end -->
 
-            <!-- Nav -->
-            <ul class="nav">
-                <li><a href="#" class="active"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="#"><i class="fas fa-user-alt"></i> Sobre Mi</a></li>
-                <li><a href="#"><i class="fas fa-briefcase"></i> Portafolio</a></li>
-                <li><a href="#"><i class="fas fa-comments"></i> Contacto</a></li>
-            </ul>
-            <!-- Nav end -->
+            <!-- Sidebar-inner -->
+            <div class="sidebar-inner">
 
-            <!-- Footer -->
-            <div class="sidebar-footer">
-                
+                <!-- Btn Dark -->
+                <div class="container-btn-dark">
+                    <div class="btn-dark">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+                <!-- Btn Dark end-->
+
+                <!-- Nav -->
+                <ul class="nav">
+                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#about"><i class="fas fa-user-alt"></i> Sobre Mi</a></li>
+                    <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portafolio</a></li>
+                    <li><a href="#contact"><i class="fas fa-comments"></i> Contacto</a></li>
+                </ul>
+                <!-- Nav end -->
+
+                <!-- Copyright -->
+                <div class="sidebar-footer">
+                    <p>&copy; Maximiliano Rivadeneira Bordón 2021</p>
+                </div>
+                <!-- Copyright end -->
             </div>
+            <!-- Sidebar-inner end -->
 
         </aside>
         <!-- Aside end -->
@@ -44,7 +58,7 @@
         <div class="main-content">
 
             <!-- Home section -->
-            <section class="home section active">
+            <section class="home section active" id="home">
                 <!-- Container -->
                 <div class="container">
                     <!--Intro-->
@@ -54,9 +68,11 @@
                         <h1>Maximiliano Rivadeneira Bordón</h1>
                         <p>Desarrollador Web - FullStack Developer</p>
                         <div class="redes-sociales">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/maximilianorivadeneira/" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/Maxii_Bordon" target="_blank"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="https://github.com/mbordon22" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <!--Intro end-->
@@ -67,7 +83,7 @@
 
 
             <!-- About section -->
-            <section class="about section">
+            <section class="about section" id="about">
                 <div class="container">
                     <div class="row">
                         <div class="section-titulo">
@@ -80,10 +96,9 @@
                                 <div class="about-text">
                                     <h3>Soy Maximiliano Rivadeneira Bordón y soy <span>Desarrollador Web</span></h3>
                                     <p>¡Hola! mi nombre es Maximiliano Rivadeneira Bordón. Soy desarrollador web, muy
-                                        apasionado y dedicado a mi trabajo. Con los años de experiencia como
+                                        apasionado y dedicado a mi trabajo. Con los cursos que he tomado y el tiempo de experiencia como
                                         desarrollador, he adquirido las habilidades y conocimientos necesarios para que
-                                        su proyecto sea un éxito. disfruto cada paso del proceso de diseño, desde la
-                                        discusión y la colaboración.</p>
+                                        su proyecto sea un éxito.</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -142,8 +157,8 @@
                                                     </h6>
                                                     <h4 class="timeline-title">Ingenieria en Sistemas</h4>
                                                     <p class="timeline-text">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                                        aliquid asperiores numquam cum odit qui, impedit voluptatibus.
+                                                        Cursando algunas materias del primer año de la carrera de
+                                                        Ingenieria en Sistemas de la Información en la UTN-FRT.
                                                     </p>
                                                 </div>
                                                 <!-- Timeline item end-->
@@ -155,8 +170,9 @@
                                                     </h6>
                                                     <h4 class="timeline-title">Profesorado de Matemáticas</h4>
                                                     <p class="timeline-text">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                                        aliquid asperiores numquam cum odit qui, impedit voluptatibus.
+                                                        Cursando el último año de la carrera de Profesorado de
+                                                        Matemáticas. Orientada a la educación secundaria. En el IES
+                                                        Profesor Manuel Marchetti.
                                                     </p>
                                                 </div>
                                                 <!-- Timeline item end-->
@@ -178,8 +194,8 @@
                                                     </h6>
                                                     <h4 class="timeline-title">Atento S.A.</h4>
                                                     <p class="timeline-text">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                                        aliquid asperiores numquam cum odit qui, impedit voluptatibus.
+                                                        Trabajo como agente teléfonico para la campaña de Telecentro. Mi
+                                                        tarea es atención al cliente en primera linea.
                                                     </p>
                                                 </div>
                                                 <!-- Timeline item end-->
@@ -191,8 +207,8 @@
                                                     </h6>
                                                     <h4 class="timeline-title">RV Ingenieria S.R.L.</h4>
                                                     <p class="timeline-text">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                                        aliquid asperiores numquam cum odit qui, impedit voluptatibus.
+                                                        Desempeño como auxiliar administrativo. Realizando control de
+                                                        inventarios y sistemas de facturación.
                                                     </p>
                                                 </div>
                                                 <!-- Timeline item end-->
@@ -204,8 +220,8 @@
                                                     </h6>
                                                     <h4 class="timeline-title">Teleperformance S.A.</h4>
                                                     <p class="timeline-text">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                                        aliquid asperiores numquam cum odit qui, impedit voluptatibus.
+                                                        Trabajaba como agente teléfonico para la campaña de Personal. Mi
+                                                        tarea era atención al cliente y venta teléfonica.
                                                     </p>
                                                 </div>
                                                 <!-- Timeline item end-->
@@ -223,7 +239,7 @@
 
 
             <!-- Portfolio section-->
-            <div class="portfolio section ">
+            <div class="portfolio section" id="portfolio">
                 <div class="container">
                     <div class="row">
                         <div class="section-titulo">
@@ -336,7 +352,7 @@
 
 
             <!-- Contact section -->
-            <div class="contact section">
+            <div class="contact section" id="contact">
                 <div class="container">
                     <div class="row">
                         <div class="section-titulo ">
@@ -355,16 +371,16 @@
                         <!-- contact-info-item -->
                         <div class="contact-info-item padding-15">
                             <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                            <h4>Teléfono</h4>
-                            <p>+54 9 3816173059</p>
+                            <h4>Ciudad</h4>
+                            <p>San Miguel de Tucumán</p>
                         </div>
                         <!-- contact-info-item end -->
 
                         <!-- contact-info-item -->
                         <div class="contact-info-item padding-15">
                             <div class="icon"><i class="fa fa-envelope"></i></div>
-                            <h4>Teléfono</h4>
-                            <p>+54 9 3816173059</p>
+                            <h4>Mail</h4>
+                            <p>rivadenneira@gmail.com</p>
                         </div>
                         <!-- contact-info-item end -->
                     </div>
@@ -394,8 +410,8 @@
                             <div class="row">
                                 <div class="form-item col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="10" class="form-cotrol"
-                                            placeholder="Mensaje"></textarea>
+                                        <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="10"
+                                            class="form-cotrol" placeholder="Mensaje"></textarea>
                                     </div>
                                 </div>
                             </div>

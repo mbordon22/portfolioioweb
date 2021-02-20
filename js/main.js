@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
 
                     if(filterValue === "all"){
-                        portfolioItems[k].classList.remove("hide");
+                        portfolioItems[k].classList.remove("hide"); 
                         portfolioItems[k].classList.add("show");
                     }
                 }
@@ -61,6 +61,89 @@ document.addEventListener("DOMContentLoaded", () => {
         if(e.target === lightboxClose || e.target === lightbox){
             toggleLightbox();
         }
+    });
+
+
+
+
+    //Sidebar nav
+
+    const nav = document.querySelector(".nav"),
+          navList = nav.querySelectorAll("li"),
+          totalNavList = navList.length,
+          allSection = document.querySelectorAll(".section"),
+          totalSection = allSection.length;
+          
+
+
+    for(let i = 0; i < totalNavList; i++){
+        const a = navList[i].querySelector("a");
+        a.addEventListener("click", function(){
+            for(let i = 0; i < totalSection; i++){
+                allSection[i].classList.remove("back-section");
+            }
+
+            for(j = 0; j < totalNavList; j++){
+                if(navList[j].querySelector("a").classList.contains("active")){
+                    allSection[j].classList.add("back-section");
+                }
+                navList[j].querySelector("a").classList.remove("active");
+            }
+
+            this.classList.add("active");
+            showSection(this);
+            if(window.innerWidth < 1200){
+                asideSectionTogglerBtn();
+            }
+        });
+    }
+
+    function showSection(element){
+        for(let i = 0; i < totalSection; i++){
+            allSection[i].classList.remove("active");
+        }
+        const target = element.getAttribute("href").split("#")[1];
+        document.querySelector("#"+target).classList.add("active");
+    }
+
+
+    const navToggleBtn = document.querySelector(".menu-toggle"),
+          sidebar = document.querySelector(".sidebar");
+
+    navToggleBtn.addEventListener("click", function(){
+              asideSectionTogglerBtn();
     })
+
+    function asideSectionTogglerBtn(){
+        sidebar.classList.toggle("open");
+        navToggleBtn.classList.toggle("open");
+        for(let i = 0; i < totalSection; i++){
+            allSection[i].classList.toggle("open");
+        }
+    }
+
+
+
+
+
+
+
+
+    //Body Dark
+    const btnDark = document.querySelector(".btn-dark"),
+          icon = btnDark.querySelector("i"),
+          body = document.querySelector("body");
+
+    btnDark.addEventListener("click", () => {
+        if(icon.classList.contains("fa-moon")){
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        }
+        else if(icon.classList.contains("fa-sun")){
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+        }
+        body.classList.toggle("dark");
+    });
 });
 
