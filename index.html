@@ -402,30 +402,30 @@
 
                     <!-- Contact Form -->
                     <div class="row container">
-                        <form class="contact-form padding-15 form">
+                        <form method="POST" action="contacto.php" class="contact-form padding-15 form">
                             <div class="row space-between">
                                 <div class="form-item col-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nombre...">
+                                        <input type="text" name="txtNombre" class="form-control" placeholder="Nombre...">
                                     </div>
                                 </div>
                                 <div class="form-item col-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email...">
+                                        <input type="text" name="txtCorreo" class="form-control" placeholder="Email...">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Asunto...">
+                                        <input type="text" name="txtAsunto" class="form-control" placeholder="Asunto...">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="10"
+                                        <textarea class="form-control" name="txtMensaje" id="mensaje" cols="30" rows="10"
                                             class="form-cotrol" placeholder="Mensaje"></textarea>
                                     </div>
                                 </div>
