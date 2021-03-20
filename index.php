@@ -9,16 +9,6 @@
     <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src='https://www.google.com/recaptcha/api.js?render=6LdQuoYaAAAAAMeQKCRs0uWM5aNoIc4vZvKxoLmF'> 
-    </script>
-    <script>
-        grecaptcha.ready(function() {
-        grecaptcha.execute('6LdQuoYaAAAAAMeQKCRs0uWM5aNoIc4vZvKxoLmF', {action: 'formulario'})
-        .then(function(token) {
-        var recaptchaResponse = document.getElementById('recaptchaResponse');
-        recaptchaResponse.value = token;
-        });});
-    </script>
 </head>
 
 <body>
@@ -469,7 +459,6 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                                     <button type="submit" class="btn">Enviar Mensaje</button>
                                 </div>
                             </div>
