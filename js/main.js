@@ -159,5 +159,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         body.classList.toggle("dark");
     });
+
+
+
+    //Boton para quitar notificacion
+    document.querySelector("#cerrar-mensaje").addEventListener("click", () => {
+
+        document.querySelector("#confirmacion-envio-formulario").classList.add("hide");
+    });
 });
 

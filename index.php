@@ -5,10 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Maximiliano Rivadeneira Bordón</title>
     <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src='https://www.google.com/recaptcha/api.js?render=6LdQuoYaAAAAAMeQKCRs0uWM5aNoIc4vZvKxoLmF'> 
+    </script>
+    <script>
+        grecaptcha.ready(function() {
+        grecaptcha.execute('6LdQuoYaAAAAAMeQKCRs0uWM5aNoIc4vZvKxoLmF', {action: 'formulario'})
+        .then(function(token) {
+        var recaptchaResponse = document.getElementById('recaptchaResponse');
+        recaptchaResponse.value = token;
+        });});
+    </script>
 </head>
 
 <body>
@@ -25,29 +35,31 @@
 
             <!-- Sidebar-inner -->
             <div class="sidebar-inner">
+                <div class="container-sidebar">
 
-                <!-- Btn Dark -->
-                <div class="container-btn-dark">
-                    <div class="btn-dark">
-                        <i class="fas fa-moon"></i>
+                    <!-- Btn Dark -->
+                    <div class="container-btn-dark">
+                        <div class="btn-dark">
+                            <i class="fas fa-moon"></i>
+                        </div>
                     </div>
-                </div>
-                <!-- Btn Dark end-->
+                    <!-- Btn Dark end-->
 
-                <!-- Nav -->
-                <ul class="nav">
-                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="#about"><i class="fas fa-user-alt"></i> Sobre Mi</a></li>
-                    <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portafolio</a></li>
-                    <li><a href="#contact"><i class="fas fa-comments"></i> Contacto</a></li>
-                </ul>
-                <!-- Nav end -->
+                    <!-- Nav -->
+                    <ul class="nav">
+                        <li><a href="#home" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="#about"><i class="fas fa-user-alt"></i> Sobre Mi</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portafolio</a></li>
+                        <li><a href="#contact"><i class="fas fa-comments"></i> Contacto</a></li>
+                    </ul>
+                    <!-- Nav end -->
 
-                <!-- Copyright -->
-                <div class="sidebar-footer">
-                    <p>&copy; Maximiliano Rivadeneira Bordón 2021</p>
+                    <!-- Copyright -->
+                    <div class="sidebar-footer">
+                        <p>&copy; Maximiliano Rivadeneira Bordón 2021</p>
+                    </div>
+                    <!-- Copyright end -->
                 </div>
-                <!-- Copyright end -->
             </div>
             <!-- Sidebar-inner end -->
 
@@ -63,8 +75,7 @@
                 <div class="container">
                     <!--Intro-->
                     <div class="intro">
-                        <img src="https://rivadeneiramaximiliano.com/images/imagen.webp" alt="Imagen Perfil"
-                            class="shadow-dark">
+                        <img src="img/imagen.webp" alt="Imagen Perfil" class="shadow-dark">
                         <h1>Maximiliano Rivadeneira Bordón</h1>
                         <p>Desarrollador Web - FullStack Developer</p>
                         <div class="redes-sociales">
@@ -96,14 +107,15 @@
                                 <div class="about-text">
                                     <h3>Soy Maximiliano Rivadeneira Bordón y soy <span>Desarrollador Web</span></h3>
                                     <p>¡Hola! mi nombre es Maximiliano Rivadeneira Bordón. Soy desarrollador web, muy
-                                        apasionado y dedicado a mi trabajo. Con los cursos que he tomado y el tiempo de experiencia como
-                                        desarrollador, he adquirido las habilidades y conocimientos necesarios para que
-                                        su proyecto sea un éxito.</p>
+                                        apasionado y dedicado a mi trabajo. Con los cursos que he tomado y el tiempo de
+                                        experiencia como
+                                        desarrollador, he adquirido las habilidades y conocimientos necesarios para llevar a cabo todo tipo de proyectos dentro del desarrollo web.</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="personal-info padding-15">
                                     <div class="row">
+                                        <!-- Datos personales -->
                                         <div class="info-item">
                                             <p>Edad: <span>22 años</span></p>
                                         </div>
@@ -111,7 +123,7 @@
                                             <p>Ciudad: <span>San Miguel de Tucumán</span></p>
                                         </div>
                                         <div class="info-item">
-                                            <p>Correo: <span>rivadenneira@gmai.com</span></p>
+                                            <p>Correo: <span>rivadenneira@gmail.com</span></p>
                                         </div>
                                         <div class="info-item">
                                             <p>Teléfono: <span>+54 9 3816173059</span></p>
@@ -119,13 +131,16 @@
                                     </div>
                                     <div class="row">
                                         <div class="buttons">
-                                            <a href="files/CV.pdf" download="Curriculum Vitae Rivadeneira Bordon Maximiliano" class="btn">Descargar CV</a>
+                                            <a href="files/CV.pdf"
+                                                download="Curriculum Vitae Rivadeneira Bordon Maximiliano"
+                                                class="btn">Descargar CV</a>
                                             <a href="#" class="btn" id="btnContacto">Contacto</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
+                                <!-- Skills -->
                                 <div class="skills">
                                     <h3 class="titulo">Habilidades</h3>
                                 </div>
@@ -143,7 +158,9 @@
                                     <p>Github</p>
                                 </div>
                             </div>
+                            <!-- Skills fin -->
                             <div class="row">
+                                <!-- Educacion -->
                                 <div class="educacion">
                                     <h3 class="titulo">Educación</h3>
                                     <div class="row">
@@ -181,6 +198,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Educacion fin -->
+                                <!-- Experiencia -->
                                 <div class="experiencia">
                                     <h3 class="titulo">Experiencia</h3>
                                     <div class="row">
@@ -192,10 +211,9 @@
                                                     <h6 class="timeline-date">
                                                         <i class="fa fa-calendar-alt"></i> 2021 - Actualmente
                                                     </h6>
-                                                    <h4 class="timeline-title">Atento S.A.</h4>
+                                                    <h4 class="timeline-title">ParfaiTech</h4>
                                                     <p class="timeline-text">
-                                                        Trabajo como agente teléfonico para la campaña de Telecentro. Mi
-                                                        tarea es atención al cliente en primera linea.
+                                                        PHP fullstack developer. Desarrollo y mantenimiento de paginas y sistemas web.
                                                     </p>
                                                 </div>
                                                 <!-- Timeline item end-->
@@ -230,6 +248,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Experiencia fin -->
                             </div>
                         </div>
                     </div>
@@ -247,19 +266,23 @@
                         </div>
                     </div>
                     <div class="row">
+                        <!-- Menu - filtro -->
                         <div class="portfolio-filter padding-15">
                             <button type="" class="active" data-filter="all">All</button>
                             <button type="" data-filter="fullstack">FullStack</button>
                             <button type="" data-filter="frontend">Frontend</button>
                             <button type="" data-filter="backend">Backend</button>
                         </div>
+                        <!-- Menu - filtro fin-->
                     </div>
                     <div class="row center">
                         <!-- Portfolio Item -->
                         <div class="portfolio-item padding-15" data-category="frontend">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="img/modeloHotel.webp" alt="Imagen Proyecto" data-link="https://mbordon22.github.io/ModeloHotel" data-repo="https://github.com/mbordon22/ModeloHotel">
+                                    <img src="img/modeloHotel.webp" alt="Imagen Proyecto"
+                                        data-link="https://mbordon22.github.io/ModeloHotel"
+                                        data-repo="https://github.com/mbordon22/ModeloHotel">
                                 </div>
                                 <div class="portfolio-info">
                                     <h4>Modelo Hotel</h4>
@@ -274,7 +297,9 @@
                         <div class="portfolio-item padding-15" data-category="backend">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="img/SistemaGV.webp" alt="Imagen Proyecto" data-link="#" data-repo="https://github.com/mbordon22/adminVentas">
+                                    <img src="img/SistemaGV.webp" alt="Imagen Proyecto"
+                                        data-link="sistemas/adminVentas/index.php"
+                                        data-repo="https://github.com/mbordon22/adminVentas">
                                 </div>
                                 <div class="portfolio-info">
                                     <h4>Sistema de gestion de Ventas</h4>
@@ -289,7 +314,9 @@
                         <div class="portfolio-item padding-15" data-category="fullstack">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="img/uptask.webp" alt="Imagen Proyecto" data-link="#" data-repo="https://github.com/mbordon22/uptask">
+                                    <img src="img/uptask.webp" alt="Imagen Proyecto"
+                                        data-link="sistemas/uptask/index.php"
+                                        data-repo="https://github.com/mbordon22/uptask">
                                 </div>
                                 <div class="portfolio-info">
                                     <h4>Administrador de Tareas Uptask</h4>
@@ -304,7 +331,9 @@
                         <div class="portfolio-item padding-15" data-category="fullstack">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="img/agendaphp.webp" alt="Imagen Proyecto" data-link="#" data-repo="https://github.com/mbordon22/Agenda">
+                                    <img src="img/agendaphp.webp" alt="Imagen Proyecto"
+                                        data-link="sistemas/agendaphp/index.php"
+                                        data-repo="https://github.com/mbordon22/Agenda">
                                 </div>
                                 <div class="portfolio-info">
                                     <h4>Agenda PHP</h4>
@@ -319,7 +348,9 @@
                         <div class="portfolio-item padding-15" data-category="frontend">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="img/bienesraices.webp" alt="Imagen Proyecto" data-link="https://modelobienesraicesmaximiliano.netlify.app/" data-repo="https://github.com/mbordon22/BienesRaices">
+                                    <img src="img/bienesraices.webp" alt="Imagen Proyecto"
+                                        data-link="https://modelobienesraicesmaximiliano.netlify.app/"
+                                        data-repo="https://github.com/mbordon22/BienesRaices">
                                 </div>
                                 <div class="portfolio-info">
                                     <h4>Modelo Bienes Raices</h4>
@@ -334,7 +365,9 @@
                         <div class="portfolio-item padding-15" data-category="frontend">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="img/paginafestival.webp" alt="Imagen Proyecto" data-link="https://festivalmusicmaximiliano.netlify.app" data-repo="https://github.com/mbordon22/festivalrock">
+                                    <img src="img/paginafestival.webp" alt="Imagen Proyecto"
+                                        data-link="https://festivalmusicmaximiliano.netlify.app"
+                                        data-repo="https://github.com/mbordon22/festivalrock">
                                 </div>
                                 <div class="portfolio-info">
                                     <h4>Modelo página web</h4>
@@ -349,7 +382,9 @@
                         <div class="portfolio-item padding-15" data-category="frontend">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="img/blogcafe.webp" alt="Imagen Proyecto" data-link="https://modeloblogmaximiliano.netlify.app/" data-repo="https://github.com/mbordon22/BlogCafe">
+                                    <img src="img/blogcafe.webp" alt="Imagen Proyecto"
+                                        data-link="https://modeloblogmaximiliano.netlify.app/"
+                                        data-repo="https://github.com/mbordon22/BlogCafe">
                                 </div>
                                 <div class="portfolio-info">
                                     <h4>Modelo Blog</h4>
@@ -406,7 +441,8 @@
                             <div class="row space-between">
                                 <div class="form-item col-6">
                                     <div class="form-group">
-                                        <input type="text" name="txtNombre" class="form-control" placeholder="Nombre...">
+                                        <input type="text" name="txtNombre" class="form-control"
+                                            placeholder="Nombre...">
                                     </div>
                                 </div>
                                 <div class="form-item col-6">
@@ -418,20 +454,22 @@
                             <div class="row">
                                 <div class="form-item col-12">
                                     <div class="form-group">
-                                        <input type="text" name="txtAsunto" class="form-control" placeholder="Asunto...">
+                                        <input type="text" name="txtAsunto" class="form-control"
+                                            placeholder="Asunto...">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="txtMensaje" id="mensaje" cols="30" rows="10"
-                                            class="form-cotrol" placeholder="Mensaje"></textarea>
+                                        <textarea class="form-control" name="txtMensaje" id="mensaje" cols="30"
+                                            rows="10" class="form-cotrol" placeholder="Mensaje"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
+                                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                                     <button type="submit" class="btn">Enviar Mensaje</button>
                                 </div>
                             </div>
@@ -442,6 +480,23 @@
             <!-- Contact section end -->
         </div>
         <!--Main Content end-->
+
+        <!-- Alerta de envio de formulario -->
+        <?
+        if(isset($_REQUEST["envio"])){
+            $envio = $_REQUEST["envio"]; ?>
+            <div class="confirmacion-envio-formulario" id="confirmacion-envio-formulario" style="background-color: <?php echo($envio == 1) ? "rgb(60, 197, 67)" : "rgb(194, 34, 34)"; ?>">
+                <?
+                    if($envio == 1){
+                        echo "<p>Su mensaje fue enviado exitosamente.</p>";
+                    }
+                    else{
+                        echo "<p>Su mensaje no pudo ser enviado, intente nuevamente.</p>";
+                    }
+                ?>
+                <a href="#" id="cerrar-mensaje">X</a>
+            </div>
+        <? } ?>
     </div>
     <!-- Main Container -->
 

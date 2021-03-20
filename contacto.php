@@ -1,72 +1,39 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+$recaptcha_secret = '6LdQuoYaAAAAADJZlp-cuMfRdVMyivEExY3lRedD'; 
+$recaptcha_response = $_POST['recaptcha_response']; 
+$url = 'https://www.google.com/recaptcha/api/siteverify'; 
 
-$pg = "contacto";
+$data = array( 'secret' => $recaptcha_secret, 'response' => $recaptcha_response, 'remoteip' => $_SERVER['REMOTE_ADDR'] ); 
+$curlConfig = array( CURLOPT_URL => $url, CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_POSTFIELDS => $data ); 
+$ch = curl_init(); 
+curl_setopt_array($ch, $curlConfig); 
+$response = curl_exec($ch); 
+curl_close($ch);
 
-include_once "PHPMailer/src/SMTP.php";
-include_once "PHPMailer/src/PHPMailer.php";
-$msg = "";
-
-function guardarCorreo($correo)
-{
-    $archivo = fopen("mails.txt", "a+");
-    fwrite($archivo, $correo . ";\n\r");
-    fclose($archivo);
-}
-
-if ($_POST) { /* es postback */
-
+$jsonResponse = json_decode($response);
+if ($jsonResponse->success === true) { 
+    //Recibo las variables
     $nombre = $_POST["txtNombre"];
     $correo = $_POST["txtCorreo"];
     $asunto = $_POST["txtAsunto"];
     $mensaje = $_POST["txtMensaje"];
 
-    if ($nombre != "" && $correo != "") {
-        guardarCorreo($correo);
+    //Armo el cuerpo del mensaje
+    $cuerpo = "Alguien se contactó con usted: \n";
+    $cuerpo .= "Nombre: ${nombre} \n";
+    $cuerpo .= "Correo: ${correo} \n";
+    $cuerpo .= "Mensaje: ${mensaje} \n";
 
-        $mail = new PHPMailer();
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true;
-        $mail->Host = "smtp.hostinger.com.ar"; // SMTP a utilizar. Por ej. mail.dominio.com.ar*/
-        $mail->Username = "rivadenneira@rivadeneiramaximiliano.com"; // Correo completo a utilizar
-        $mail->Password = "Racing14"; //Clave
-        $mail->Port = 587;
-        $mail->From = "rivadenneira@rivadeneiramaximiliano.com"; // Desde donde enviamos (Para mostrar)
-        $mail->FromName = "Maximiliano Rivadeneira Bordón";
-        $mail->IsHTML(true);
-        $mail->SMTPOptions = array(
-            'ssl' => array(
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true,
-            ),
-        );
+    //Enviar a mi correo
+    mail("rivadenneira@gmail.com", "Mensaje del portfolio web: ${asunto}", $cuerpo);
 
-        //Destinatario
-        $mail->addAddress($correo);
-        $mail->addBCC("rivadenneira@rivadeneiramaximiliano.com");
-        $mail->Subject = "Contacto página web";
-        $mail->Body = "Recibimos tu consulta, <br>te responderemos a la brevedad.";
-        //  if(!$mail->Send()){
-        //     $msg = "Error al enviar el correo, intente nuevamente mas tarde.";
-        //   }
-        $mail->ClearAllRecipients(); //Borra los destinatarios
-
-        //Nosotros
-        $mail->addAddress("rivadenneira@gmail.com");
-        $mail->Subject = "Recibiste un mensaje desde tu página web";
-        $mail->Body = "Te escribió $nombre cuyo correo es $correo, con el asunto $asunto y el siguiente mensaje:<br><br>$mensaje";
-
-        if ($mail->Send()) {
-            header('Location: index.html');
-        } else {
-            $msg = "Error al enviar el correo, intente nuevamente mas tarde.";
-        }
-    } else {
-        $msg = "Complete todos los campos";
-    }
+    // Redirigir al inicio y mostrar mensaje de exito
+    header("Location: ". "https://rivadeneiramaximiliano.com/?envio=1");
+} else {
+   // Redirigir al inicio y mostrar mensaje de error
+   header("Location: ". "https://rivadeneiramaximiliano.com/?envio=2");
 }
+
+
 ?>
